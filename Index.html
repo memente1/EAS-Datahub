@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - EAS DataHub</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        .header-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        .sub-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .about-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .about-text {
+            font-style: italic;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+
+        .chart-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .section-title {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .vertical-column-left {
+            background-color: black;
+            color: white;
+            height: 100%;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 999;
+        }
+
+        .vertical-column-left a,
+        .vertical-column-right a {
+            color: inherit;
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+            text-decoration: none;
+        }
+
+        .vertical-column-left img,
+        .vertical-column-right img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        .main-content {
+            margin-left: 220px;
+            margin-right: 220px;
+        }
+
+        .vertical-column-right {
+            background-color: lightblue;
+            color: black;
+            position: fixed;
+            top: 70px;
+            right: 0;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 999;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar .nav-link,
+        .navbar .navbar-brand {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        body {
+            padding-top: 70px;
+        }
+
+        .contact-section {
+            background-color: black;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            background-color: blue;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-icons a:hover {
+            text-decoration: none;
+        }
+
+        .about-section {
+            background-color: #e0f7fa; /* Very light blue color */
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .about-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .about-section .content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .separator {
+            border-top: 3px solid blue;
+            margin: 40px 0;
+        }
+
+        .about-section .content em {
+            font-size: 1.2em;
+            line-height: 1.5;
+        }
+
+        .skill-description {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        .card .card-text {
+            font-size: 1.1em;
+        }
+
+        .skills-section img {
+            margin-right: 10px;
+        }
+
+        .skills-section,
+        .domain-expertise-section {
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .domain-expertise-section {
+            background-color: #e0f7fa; /* Very light blue color */
+            color: black;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .domain-expertise-section h4 {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .domain-expertise-section .skill-description {
+            margin-bottom: 10px;
+        }
+
+        .domain-expertise-section .skill-description p {
+            line-height: 1.2;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="70">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand header-title" href="#">EAS DataHub</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#what-i-do">What I do!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#research">Research & Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how-to">How To Do It</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="vertical-column-left">
+        <h4 class="my-3">Navigate</h4>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact Me</a>
+        <h4 class="my-3">Blog Links</h4>
+        <a href="#"><img src="images/about/1.jpg" alt="Blog 1"></a>
+        <a href="#"><img src="images/about/1.jpg" alt="Blog 2"></a>
+        <a href="#"><img src="images/about/1.jpg" alt="Blog 3"></a>
+        <a href="#"><img src="images/about/1.jpg" alt="Blog 4"></a>
+    </div>
+
+    <div class="main-content">
+        <!-- About Section -->
+        <section id="about" class="content-section container about-section">
+            <h2 class="section-title text-center">About</h2>
+            <div class="text-center">
+                <img src="images/about/Me.jpg" alt="About Me" class="about-image img-fluid rounded-circle" style="width: 150px;">
+            </div>
+            <div class="content text-center mt-2">
+                <p class="sub-title">Dr. Atangana Seme, Statistical Analyst | Researcher</p>
+                <p class="about-text"><em>I specialize in extracting meaningful insights from complex datasets to drive strategic decisions and solve real-world problems. My expertise spans across data analysis, statistical modeling, machine learning, and data visualization. I leverage advanced tools such as Python, SQL, Tableau, Power BI, R, 
+                    and Excel to conduct thorough analyses, create dynamic visualizations, and develop predictive models. Whether it is through building interactive dashboards, performing in-depth data exploration, or deploying machine learning algorithms, I am committed to harnessing the power of data to deliver impactful solutions and drive business success.</em></p>
+                <a href="path/to/your/CV.pdf" class="btn btn-primary">View my CV</a>
+            </div>
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- What I do! Section -->
+        <section id="what-i-do" class="content-section container">
+            <h2 class="section-title text-center">What I do!</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="images/Areas/Stats.jpg" class="card-img-top" alt="What I do! 1">
+                        <div class="card-body">
+                            <h5 class="card-title">STATISTICAL ANALYTICS</h5>
+                            <p class="card-text">As Statistical analysis, I employ various techniques such as hypothesis testing to determine the validity of assumptions, regression analysis to examine relationships between variables, and time series analysis to identify patterns over time. I also use multivariate analysis to study interactions between multiple variables, experimental design to ensure valid data collection, and Bayesian analysis to update probabilities based on new data. These methods enable robust data-driven insights and informed decision-making.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="images/Areas/ML.jpg" class="card-img-top" alt="What I do! 2">
+                        <div class="card-body">
+                            <h5 class="card-title">MACHINE LEARNING</h5>
+                            <p class="card-text">AOne of my areas of expertise spans machine learning. I use various techniques for predicting and finding patterns in data, including supervised learning for classification and regression, unsupervised learning for discovering patterns, and deep learning with neural networks for complex data modeling. These methods provide powerful data-driven insights and applications.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="images/Areas/BI.jpg" class="card-img-top" alt="What I do! 3">
+                        <div class="card-body">
+                            <h5 class="card-title">BUSINESS INTELLIGENCE</h5>
+                            <p class="card-text">My expertise in Business Intelligence involves creating dashboards for visualizing KPIs, developing and tracking key metrics to measure progress, and modeling business processes to improve efficiency. I use data to seek inform strategic and operational choices. These techniques enable organizations to make informed, data-driven decisions and enhance their operational effectiveness.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="content-section container">
+            <h2 class="section-title text-center">Projects</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="images/about/1.jpg" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 1</h5>
+                            <p class="card-text">A brief description of project 1.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="images/about/1.jpg" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 2</h5>
+                            <p class="card-text">A brief description of project 2.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="images/about/1.jpg" class="card-img-top" alt="Project 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Project 3</h5>
+                            <p class="card-text">A brief description of project 3.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Publications Section -->
+        <section id="research" class="content-section container">
+            <h2 class="section-title text-center">Research & Publications</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="images/Projects/ImgArt.jpg" class="card-img-top" alt="Research 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Research 1</h5>
+                            <p class="card-text">A brief description of research 1.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="Images/Projects/ImgMLL.jpg" class="card-img-top" alt="Research 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Research 2</h5>
+                            <p class="card-text">A brief description of research 2.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="Images/Projects/ImgML.jpg" class="card-img-top" alt="Research 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Research 3</h5>
+                            <p class="card-text">A brief description of research 3.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How To Do It Section -->
+        <section id="how-to" class="content-section container">
+            <h2 class="section-title text-center">How To Do It</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="images/about/1.jpg" class="card-img-top" alt="How To 1">
+                        <div class="card-body">
+                            <h5 class="card-title">How To 1</h5>
+                            <p class="card-text">A brief description of how to do it 1.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="images/about/1.jpg" class="card-img-top" alt="How To 2">
+                        <div class="card-body">
+                            <h5 class="card-title">How To 2</h5>
+                            <p class="card-text">A brief description of how to do it 2.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card">
+                        <img src="images/about/1.jpg" class="card-img-top" alt="How To 3">
+                        <div class="card-body">
+                            <h5 class="card-title">How To 3</h5>
+                            <p class="card-text">A brief description of how to do it 3.</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section text-center">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="container">
+                <div class="row contact-info">
+                    <div class="col-md-6">
+                        <p><i class="fas fa-envelope"></i> email@example.com</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8 social-icons">
+                        <a href="https://linkedin.com" class="fab fa-linkedin" data-toggle="tooltip" data-placement="top" title="LinkedIn"></a>
+                        <a href="https://twitter.com" class="fab fa-twitter" data-toggle="tooltip" data-placement="top" title="Twitter"></a>
+                        <a href="https://github.com" class="fab fa-github" data-toggle="tooltip" data-placement="top" title="GitHub"></a>
+                        <a href="https://medium.com" class="fab fa-medium" data-toggle="tooltip" data-placement="top" title="Medium"></a>
+                        <a href="https://youtube.com" class="fab fa-youtube" data-toggle="tooltip" data-placement="top" title="YouTube"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="vertical-column-right skills-section">
+        <h4 class="my-3">View Skills</h4>
+        <a href="#"><img src="Images/Skills/Pyt.jpg" alt="Python" style="width: 40px; height: 40px;"></a>
+        <div class="skill-description">
+            <h5>Python</h5>
+            <p>I use Python Libraries such as pandas, NumPy, scikit-learn for data manipulation, statistical analysis, and machine learning using... I create visualizations with matplotlib and seaborn.</p>
+        </div>
+        <a href="#"><img src="Images/Skills/R.jpg" alt="R" style="width: 40px; height: 40px;"></a>
+        <div class="skill-description">
+            <h5>R</h5>
+            <p>I employ R for statistical computing and graphics, conducting data analysis and developing sophisticated data models.</p>
+        </div>
+        <a href="#"><img src="Images/Skills/Pow.jpg" alt="PowerBI" style="width: 40px; height: 40px;"></a>
+        <div class="skill-description">
+            <h5>PowerBI</h5>
+            <p>I leverage Power BI to build dynamic and interactive dashboards, providing real-time data analytics and visualization for effective decision-making.</p>
+        </div>
+        <a href="#"><img src="Images/Skills/EXC.jpg" alt="Excel" style="width: 40px; height: 40px;"></a>
+        <div class="skill-description">
+            <h5>Excel</h5>
+            <p> I use Excel for data analysis, creating complex spreadsheets, and utilizing advanced functions to streamline workflows and generate reports.</p>
+        </div>
+        <a href="#"><img src="Images/Skills/SQL.jpg" alt="SQL" style="width: 40px; height: 40px;"></a>
+        <div class="skill-description">
+            <h5>SQL</h5>
+            <p> I use SQL to manage and manipulate databases, perform complex queries, and extract meaningful insights from large datasets.</p>
+        </div>
+    </div>
+
+    <div class="vertical-column-right domain-expertise-section" style="top: 470px;">
+        <h4 class="my-3">Domain of Expertise</h4>
+        <a href="#"><img src="images/about/1.jpg" alt="Healthcare" style="width: 40px; height: 40px;"></a>
+        <div class="skill-description">
+            <h5>Healthcare</h5>
+            <p>Expertise in analyzing healthcare data to improve patient outcomes, streamline operations, and ensure regulatory compliance.</p>
+        </div>
+        <a href="#"><img src="images/about/1.jpg" alt="Finances" style="width: 40px; height: 40px;"></a>
+        <div class="skill-description">
+            <h5>Finances</h5>
+            <p>Specialized in financial data analysis to optimize investments, manage risks, and drive strategic decision-making.</p>
+        </div>
+        <a href="#"><img src="images/about/1.jpg" alt="Marketing" style="width: 40px; height: 40px;"></a>
+        <div class="skill-description">
+            <h5>Marketing</h5>
+            <p>Utilizing data analytics to understand customer behavior, optimize campaigns, and enhance ROI in marketing.</p>
+        </div>
+        <a href="#"><img src="images/about/1.jpg" alt="Other Domain" style="width: 40px; height: 40px;"></a>
+        <div class="skill-description">
+            <h5>Other Domain</h5>
+            <p>Applying data analysis skills to a variety of other domains to solve problems and drive improvements.</p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function() {
+                        window.location.hash = hash;
+                    });
+                }
+            });
+            // Initialize tooltips
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+
+</html>
+
